@@ -1,0 +1,3 @@
+Identity based IAM policies.
+
+identity based policy are json permisson policy documents that control what actions an identity can perform. on which resources, and under what conditions.
