@@ -1,0 +1,15 @@
+Amazon guardDuty:
+    1. inteligent threat detection to protect your account.
+    uses machine learning algorithm, anomaly detection. 3rd party data
+    one clickenable, no need to install software.
+    input data includes
+        cloudtrail event logs
+            cloudtrail management event logs
+            cloudtrail data event logs
+        vpc flow logs
+        dns logs
+        optional features
+            eks audit logs, rds, and aurora, ebs lambda and s3 data events
+        can setup event bridge rules in case of and findings
+        event bridge rules can target aws lambda or sns
+        can protect against crypto currency attacks. has dedicated findings for it.
