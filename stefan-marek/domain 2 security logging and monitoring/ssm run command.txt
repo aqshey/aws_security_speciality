@@ -31,3 +31,28 @@ features:
 - Supports command output compression
 
 
+To install http server on ec2 instance
+```
+aws ssm send-command --document-name "AWS-RunShellScript" --targets "Key=tag:Name,Values=MyInstance" --parameters commands="sudo yum install -y httpd"
+
+but using document
+
+aws ssm send-command --document-name "AWS-InstallApplication" --targets "Key=tag:Name,Values=MyInstance" --parameters "action=Install,installationType=Uninstall and reinstall, name=Apache"
+
+json format for the file is
+
+{
+  "schemaVersion": "2.2",
+  "description": "Install an application on an instance",
+  "mainSteps": [
+    {
+      "action": "aws:installApplication",
+      "name": "installApplication",
+      "inputs": {
+        "action": "Install",
+        "installationType": "Uninstall and reinstall",
+        "name": "Apache"
+      }
+    }
+  ]
+}
