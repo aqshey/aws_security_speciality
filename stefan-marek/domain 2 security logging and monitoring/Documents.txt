@@ -1,44 +1,14 @@
 SSM documents:
-    1. documents can be json or yaml
-    2. you define parameters and actions
-    3. many documents already exists in aws.
-    4. you can create your own documents
-    5. you can share documents with other accounts
-    6. you can use documents to automate tasks
-    7. you can use documents to install software
-    8. you can use documents to run scripts
-    9. you can use documents to run commands
-    10. you can use documents to run automation
-    11. you can use documents to run commands on multiple instances
-    12. you can use documents to run commands on multiple accounts
-    13. you can use documents to run commands on multiple regions
-    14. you can use documents to run commands on multiple platforms
-    15. you can use documents to run commands on multiple os
-    16. you can use documents to run commands on multiple distributions
-    17. you can use documents to run commands on multiple versions
-    18. you can use documents to run commands on multiple architectures
-    19. you can use documents to run commands on multiple environments
-    20. you can use documents to run commands on multiple networks
-    21. you can use documents to run commands on multiple subnets
-    22. you can use documents to run commands on multiple vpcs
-    23. you can use documents to run commands on multiple accounts
-    24. you can use documents to run commands on multiple regions
-    25. you can use documents to run commands on multiple platforms
-    26. you can use documents to run commands on multiple os
-    27. you can use documents to run commands on multiple distributions
-    28. you can use documents to run commands on multiple versions
-    29. you can use documents to run commands on multiple architectures
-    30. you can use documents to run commands on multiple environments
-    31. you can use documents to run commands on multiple networks
-    32. you can use documents to run commands on multiple subnets
-    33. you can use documents to run commands on multiple vpcs
-    34. you can use documents to run commands on multiple accounts
-    35. you can use documents to run commands on multiple regions
-    36. you can use documents to run commands on multiple platforms
-    37. you can use documents to run commands on multiple os
+    AWS Systems Manager (SSM) documents are used to define the actions and parameters for tasks you want to perform on your AWS resources. They are essential for automating and managing various operational tasks on your AWS infrastructure. Here are some specific uses:
+    Running Scripts: Execute shell scripts on Linux instances or PowerShell scripts on Windows instances.
+    Patching: Apply patch baselines to keep your instances up-to-date with the latest security patches.
+    Software Management: Install, uninstall, or update software packages on your instances.
+    Configuration Management: Configure applications and services, such as Docker or AWS Directory Service.
+    Automation: Automate routine tasks, such as updating the SSM Agent or running custom automation workflows.
+    Security: Enforce security policies and compliance by running predefined or custom scripts.
+    Monitoring and Logging: Collect and analyze logs and metrics from your instances.
 
-
-        example
+example
     {
   "schemaVersion": "2.2",
   "description": "Run a shell script or specify the commands to run.",
@@ -54,3 +24,16 @@ SSM documents:
     }
   ]
 }
+
+There are some top 10 documents
+
+AWS-RunShellScript: Runs shell scripts on Linux instances.
+AWS-RunPowerShellScript: Runs PowerShell scripts on Windows instances.
+AWS-ApplyPatchBaseline: Applies a patch baseline to an instance.
+AWS-UpdateSSMAgent: Updates the SSM Agent on an instance.
+AWS-ConfigureAWSPackage: Installs, uninstalls, or updates AWS packages on an instance.
+AWS-RunDocument: Runs an SSM document.
+AWS-InstallApplication: Installs applications on an instance.
+AWS-ConfigureDocker: Configures Docker on an instance.
+AWS-JoinDirectoryServiceDomain: Joins an instance to an AWS Directory Service domain.
+AWS-RunPatchBaseline: Runs a patch baseline on an instance.

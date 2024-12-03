@@ -1,0 +1,33 @@
+SSM run command
+
+The ssm run command feature in AWS Systems Manager (SSM) allows you to remotely execute commands on your managed instances.
+This is useful for automating common administrative tasks and managing your instances without needing to log in to each one individually.
+The run command feature supports both shell scripts for Linux instances and PowerShell scripts for Windows instances.
+You can run commands on individual instances, groups of instances, or all instances in your account.
+
+example usage:
+```
+aws ssm send-command --document-name "AWS-RunShellScript" --targets "Key=tag:Name,Values=MyInstance" --parameters commands="echo Hello, World!"
+```
+To manage the ec2 instance from ssm you need iam role.
+
+features:
+- Run commands on multiple instances simultaneously
+- View the status of commands and their output in real-time
+- Schedule commands to run at a later time
+- Store command output in S3
+- Use predefined SSM documents or create custom documents
+- Securely manage instances without needing to open inbound ports or maintain SSH keys
+- Monitor and audit command execution with AWS CloudTrail
+- Integrate with AWS Identity and Access Management (IAM) for fine-grained access control
+- Automate common administrative tasks and workflows
+- Supports both Linux and Windows instances
+- Supports both on-premises and cloud instances
+- Supports hybrid environments
+- Supports custom scripts and commands
+- Supports parameterized commands
+- Supports command output logging
+- Supports command output encryption
+- Supports command output compression
+
+
