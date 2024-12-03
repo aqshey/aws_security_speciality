@@ -1,0 +1,3 @@
+To manage the ec2 instance from ssm you need iam role.
+
+1. AmazonSSMManagedInstanceCore   
