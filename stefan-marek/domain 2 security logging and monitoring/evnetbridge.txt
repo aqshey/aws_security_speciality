@@ -1,0 +1,48 @@
+Eventbridge:
+1. EventBridge is a serverless event bus service that makes it easy to connect applications together using data from your own applications, integrated Software-as-a-Service (SaaS) applications, and AWS services.
+2. EventBridge delivers a stream of real-time data from event sources, such as application and custom integrations, and routes that data to targets like AWS Lambda.
+3. EventBridge is the next evolution of Amazon CloudWatch Events and is designed to make it easy to build event-driven applications.
+4. EventBridge allows you to create rules that match incoming events and route them to targets for processing.
+5. EventBridge supports a wide range of event sources and targets, making it easy to integrate with your existing applications and services.
+6. EventBridge is a fully managed service that automatically scales to handle the volume of events in your environment.
+
+schedule:
+1. EventBridge allows you to create rules that match incoming events and route them to targets for processing.
+2. You can use EventBridge rules to schedule events to run at specific times or on a recurring basis.
+3. For example, you can create a rule that triggers an AWS Lambda function to run every hour to perform a specific task.
+
+
+
+Terraform code to create an eventbridge rule for sending SNS notification when an ec2 instance is stopped:
+
+```hcl
+resource "aws_cloudwatch_event_rule" "stop_instance_rule" {
+  name        = "stop_instance_rule"
+  description = "Rule to send SNS notification when an ec2 instance is stopped"
+  schedule_expression = "event['detail-type'] == 'EC2 Instance State-change Notification' && event['detail']['state'] == 'stopped'"
+}
+
+resource "aws_cloudwatch_event_target" "stop_instance_target" {
+  rule      = aws_cloudwatch_event_rule.stop_instance_rule.name
+  target_id = "send_sns_notification"
+  arn       = aws_sns_topic.sns_topic.arn
+}
+```
+IAM permission required for eventbridge rule:
+
+json:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```

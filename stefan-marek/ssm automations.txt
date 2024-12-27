@@ -1,0 +1,50 @@
+SSM automations:
+   1.  AWS Systems Manager (SSM) automations are predefined workflows that you can use to perform common administrative tasks on your AWS resources.
+    They are designed to simplify the process of managing your infrastructure and applications by providing a set of predefined steps that you can execute
+    without needing to write custom scripts. Here are some key features of SSM automations:
+    2. Predefined Workflows: Automations are predefined workflows that you can use to perform common administrative tasks, such as patching,
+    software installation, and configuration management.
+    Easy to Use: Automations are easy to use and require minimal configuration. You can run them with a few clicks in the AWS Management Console or
+    using the AWS Command Line Interface (CLI).
+
+
+Automation Runbook:
+    ssm documents of type automation are called runbooks. They are used to define the steps and parameters for automating common administrative tasks
+    on your AWS resources. Runbooks are similar to SSM documents, but they are specifically designed for automating workflows and processes. Here are
+    some key features of runbooks:
+    Predefined Steps: Runbooks contain predefined steps that you can use to automate common administrative tasks, such as patching, software
+    installation, and configuration management.
+    Input Parameters: Runbooks can accept input parameters that allow you to customize the execution of the workflow. You can specify parameters
+    such as instance IDs, package names, and configuration settings.
+    Secure: Runbooks are secure and integrate with AWS Identity and Access Management (IAM) for fine-grained access control. You can control who
+    has permission to execute runbooks and what actions they can perform.
+    can be triggered manually or scheduled to run at a specific time or on a recurring basis.
+    by eventbridge rules
+    on a schedule using maintenance windows.
+
+    for example:
+    {
+        "schemaVersion": "0.3",
+        "description": "Install a package on an instance",
+        "parameters": {
+            "packageName": {
+                "type": "String",
+                "description": "The name of the package to install"
+            }
+        },
+        "mainSteps": [
+            {
+                "action": "aws:runShellScript",
+                "name": "runShellScript",
+                "inputs": {
+                    "runCommand": [
+                        "sudo yum install -y {{packageName}}"
+                    ]
+                }
+            }
+        ]
+    }
+
+
+
+
