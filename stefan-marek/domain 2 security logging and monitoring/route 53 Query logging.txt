@@ -1,0 +1,17 @@
+DNS query logging:
+1. log information about public dns queries route 53 resolver receives.
+2. only for public hosted zones.
+3. logs are sent to cloudwatch logs only.
+
+Another :
+1. logs all dns queries made by resources within your vpc.
+2. logs are sent to cloudwatch logs or s3.
+3. can be enabled for all vpcs in an account or for specific vpcs.
+4. can be enabled for all queries or for queries that match specific criteria.
+5. can be used to monitor and troubleshoot dns queries made by resources within your vpc.
+
+
+how?
+1. enable dns query logging for a vpc.
+2. choose the vpc and the log destination.
+

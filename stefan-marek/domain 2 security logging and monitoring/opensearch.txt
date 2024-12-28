@@ -1,0 +1,9 @@
+Opensearch:
+1. OpenSearch is a distributed search and analytics engine that allows you to search, analyze, and
+    visualize large amounts of data in real time.
+2. OpenSearch is a fork of Elasticsearch and Kibana that is fully open source and maintained by the
+    OpenSearch community.
+3. OpenSearch provides powerful search and analytics capabilities that can be used to build a wide
+    range of applications, such as log analytics, full-text search, and real-time monitoring.
+4. OpenSearch is designed to be highly scalable and fault-tolerant, making it suitable for
+    applications that require high availability and low latency.

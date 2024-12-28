@@ -1,0 +1,25 @@
+VPC network access analyzer:
+1. VPC Network Access Analyzer is a service that helps you analyze and improve your VPC security posture by identifying overly permissive access settings.
+2. It helps you identify potential security risks in your VPCs, such as internet gateways that are not attached to any instances, security groups that allow unrestricted access to ports, and subnets that allow traffic from the internet.
+3. VPC Network Access Analyzer provides a visual representation of your VPC traffic paths, making it easy to identify potential security risks and take corrective actions.
+4. You can use VPC Network Access Analyzer to analyze your
+    VPC security groups
+    route tables
+    internet gateways
+    subnets
+    to ensure that they are configured correctly and securely.
+
+Steps to analyze VPC network access:
+    1. Open the VPC Network Access Analyzer console.
+    2. Choose the VPC that you want to analyze.
+    3. Review the findings and recommendations.
+    4. Take corrective actions to improve your VPC security posture.
+
+Network access scope:
+1. VPC Network Access Analyzer provides two types of network access scope:
+    VPC scope: Analyzes the network access configuration of all resources within a VPC, including security groups, route tables, internet gateways, and subnets.
+    subnet scope: Analyzes the network access configuration of all resources within a subnet, including security groups, route tables, and internet gateways.
+
+How?
+1. VPC Network Access Analyzer uses a combination of automated reasoning and network reachability analysis to identify potential security risks in your VPCs.
+2. It analyzes the network access configuration of your VPCs and identifies overly permissive access settings that could expose your resources to security threats.
