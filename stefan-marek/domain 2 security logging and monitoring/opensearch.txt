@@ -7,3 +7,20 @@ Opensearch:
     range of applications, such as log analytics, full-text search, and real-time monitoring.
 4. OpenSearch is designed to be highly scalable and fault-tolerant, making it suitable for
     applications that require high availability and low latency.
+
+
+Opensearch public access:
+1. OpenSearch domains can be configured to allow or deny public access.
+2. When public access is enabled, users can access the OpenSearch domain over the internet using
+    HTTP or HTTPS.
+
+
+Steps to create an OpenSearch domain:
+1. Open the Amazon OpenSearch Service console.
+2. Choose Create domain.
+3. Select the OpenSearch version and configuration options.
+4. Configure the domain settings, such as instance types, storage options, and access policies.
+5. Review the configuration and create the domain.
+6. Wait for the domain to be created and deployed.
+7. Access the OpenSearch domain using the endpoint provided in the console.
+

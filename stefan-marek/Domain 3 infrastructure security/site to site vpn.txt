@@ -1,0 +1,27 @@
+Site to Site VPN:
+- VPNs are used to connect two networks together over the internet.
+- Site-to-site VPNs are used to connect two or more networks together over the internet, allowing users to securely access resources in remote networks.
+- Site-to-site VPNs use IPsec (Internet Protocol Security) to encrypt and secure the data transmitted between the networks.
+
+Things needed to create Site to Site VPN connection:
+
+1. Virtual Private Gateway (VGW):
+    - A virtual private gateway is a VPN concentrator on the Amazon side of the VPN connection.
+    - It is used to establish a secure connection between your VPC and the remote network.
+    - The virtual private gateway is attached to the VPC and provides a secure gateway for traffic to and from the VPC.
+2. Customer Gateway (CGW):
+    - A customer gateway is a physical device or software application on the customer side of the VPN connection.
+    - It is used to establish a secure connection between the customer's network and the Amazon VPC.
+    - The customer gateway is configured with the public IP address of the remote network and the pre-shared key for the VPN connection.
+3. VPN Connection:
+    - A VPN connection is the connection between the virtual private gateway and the customer gateway.
+    - It is used to establish a secure and encrypted tunnel between the two networks.
+    - The VPN connection uses IPsec to encrypt and secure the data transmitted between the networks.
+4. Routing:
+    - Routing is used to direct traffic between the two networks over the VPN connection.
+    - The routing tables in the VPC and the customer network are updated to route traffic over the VPN connection.
+5. Security Groups:
+    - Security groups are used to control the traffic that is allowed to flow over the VPN connection.
+    - Inbound and outbound rules can be configured to allow or deny traffic based on the source and destination IP addresses and ports.
+
+

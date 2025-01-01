@@ -1,0 +1,29 @@
+Bastion host:
+1. A bastion host is a server that is designed to provide secure access to a private network from an external
+   network, such as the internet.
+2. It acts as a gateway between users on the internet and resources in the private network, allowing users to
+   securely access and manage the resources without exposing them to the internet.
+3. Bastion hosts are typically deployed in a public subnet of a VPC and are used to access resources in private
+   subnets using SSH or RDP.
+4. Bastion hosts are hardened and secured to prevent unauthorized access and protect the private network from
+    external threats.
+5. Bastion hosts can be used to:
+    - Securely access instances in private subnets.
+    - Monitor and manage resources in private subnets.
+    - Control access to resources in private subnets.
+
+we can use bastion host to:
+    1. Securely access instances in private subnets.
+    2. Monitor and manage resources in private subnets.
+    3. Control access to resources in private subnets.
+
+security groups structure of private subnet and public subnet should be like :
+
+private subnet:
+    - allow inbound traffic only from the bastion host.
+    - allow outbound traffic to the internet for software updates and patches.
+    - restrict inbound and outbound traffic to specific IP addresses or ranges.
+public subnet:
+    - allow inbound traffic from the internet for public-facing services.
+    - allow outbound traffic to the internet for software updates and patches.
+    - restrict inbound and outbound traffic to specific IP addresses or ranges.
