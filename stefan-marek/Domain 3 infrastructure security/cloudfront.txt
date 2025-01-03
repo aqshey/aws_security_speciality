@@ -1,0 +1,18 @@
+Cloudfront:
+1. CloudFront is a content delivery network (CDN) service provided by AWS.
+2. It is used to deliver content, such as web pages, videos, and images, to users with low latency and high transfer speeds.
+3. CloudFront caches content at edge locations around the world, reducing the load on the origin server and improving the performance of the website.
+4. CloudFront uses a global network of edge locations to cache and deliver content to users.
+5. CloudFront supports both static and dynamic content, allowing you to cache and deliver a wide range of content types.
+
+
+Cloudfront Signed URL / signed cookies:
+1. CloudFront signed URLs and signed cookies are used to control access to content delivered by CloudFront.
+2. They allow you to restrict access to specific files or directories and prevent unauthorized users from accessing the content.
+3. Signed URLs are URLs that include a cryptographic signature that verifies the identity of the signer and the integrity of the content.
+4. Signed cookies are HTTP cookies that include a cryptographic signature that verifies the identity of the signer and the integrity of the content.
+5. Signed URLs and signed cookies can be generated using the AWS Management Console, AWS SDKs, or the CloudFront API.
+
+
+You want to distribute paid shared content to your users. You want to ensure that only users who have paid for the content can access it.
+You can use CloudFront signed URLs or signed cookies to control access to the content. You can generate signed URLs or signed cookies for each user who has paid for the content, and only users with valid signed URLs or signed cookies will be able to access the content.
