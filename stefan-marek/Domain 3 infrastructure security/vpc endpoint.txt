@@ -1,0 +1,43 @@
+VPC endpoint:
+1. A VPC endpoint is a private connection between your VPC and another AWS service, such as S3, DynamoDB,
+    or Kinesis.
+2. It allows you to access the AWS service without using an internet gateway, NAT device, or VPN connection.
+3. VPC endpoints are used to secure and simplify the connection between your VPC and the AWS service.
+4. There are two types of VPC endpoints:
+    - Gateway endpoints: Used to connect your VPC to S3 and DynamoDB.
+    - Interface endpoints: Used to connect your VPC to other AWS services, such as Kinesis and CloudWatch.
+
+Things needed to create VPC endpoint:
+1. VPC:
+    - A VPC is required to create a VPC endpoint.
+    - The VPC defines the network settings for the VPC endpoint.
+2. Subnets:
+    - Subnets are required to create a VPC endpoint.
+    - The subnets define the availability zones in which the VPC endpoint is created.
+3. Route Tables:
+    - Route tables are required to route traffic to the VPC endpoint.
+    - The route tables define the routes for the VPC endpoint.
+4. Security Groups:
+    - Security groups are used to control the traffic that is allowed to flow through the VPC endpoint.
+    - Inbound and outbound rules can be configured to allow or deny traffic based on the source and destination IP addresses and ports.
+5. VPC Endpoint Policy:
+    - A VPC endpoint policy is used to control access to the VPC endpoint.
+    - The policy defines the permissions for the VPC endpoint, such as which resources can access the endpoint and what actions they can perform.
+6. DNS Resolution:
+    - DNS resolution is used to resolve the DNS names of the AWS services through the VPC endpoint.
+    - DNS resolution must be enabled for the VPC endpoint to work properly.
+7. Private DNS Names:
+    - Private DNS names are used to resolve the DNS names of the AWS services through the VPC endpoint.
+    - Private DNS names must be enabled for the VPC endpoint to work properly.
+8. Endpoint Services:
+    - Endpoint services are used to create and manage the VPC endpoints.
+    - The endpoint services provide the APIs and tools to create, update, and delete VPC endpoints.
+9. Monitoring and Logging:
+    - Monitoring and logging are used to track the traffic and usage of the VPC endpoint.
+    - CloudWatch logs and metrics can be used to monitor the VPC endpoint and detect any issues or anomalies.
+10. Encryption:
+    - Encryption is used to secure the data transmitted over the VPC endpoint.
+    - The data is encrypted using SSL/TLS to protect it from eavesdropping and tampering.
+11. Access Control:
+    - Access control is used to restrict access to the VPC endpoint.
+    - IAM policies can be used to control which users and resources can access the VPC endpoint and what actions they can perform.
