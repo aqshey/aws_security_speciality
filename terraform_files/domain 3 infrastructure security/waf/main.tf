@@ -7,38 +7,15 @@ resource "aws_wafregional_web_acl" "waf" {
     type = "ALLOW"
   }
 
-  rule {
-    rule_id     = "custom_rule_id"
-    name        = "rule"
-    metric_name = "rule"
+rule {
+  rule_id = "allow_header_rule"
     priority    = 1
-
     action {
-      type = "BLOCK"
+      type = "ALLOW"
     }
-
     override_action {
       type = "NONE"
     }
-
-    statement {
-      rule_group_reference_statement {
-        arn = "arn:aws:waf::123456789012:rulegroup/1234abcd-12ab-34cd-56ef-123456789012"
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "rule"
-      sampled_requests_enabled   = true
-    }
-
-  }
-
-  visibility_config {
-    cloudwatch_metrics_enabled = true
-    metric_name                = "waf"
-    sampled_requests_enabled   = true
   }
 }
 
@@ -66,7 +43,7 @@ resource "aws_security_group" "example" {
     from_port   = 80
     to_port     = 80
     protocol    = "TCP"
-    cidr_blocks = ["10.0,0.0/16"]
+    cidr_blocks = ["10.0.0.0/16"]
   }
   egress {
     from_port   = 0
@@ -78,13 +55,13 @@ resource "aws_security_group" "example" {
 
 resource "aws_subnet" "example1" {
   vpc_id            = aws_vpc.example.id
-  cidr_blocks       = ["10.0,0.0/16"]
+  cidr_block     = "10.0.1.0/24"
   availability_zone = "us-west-2a"
 }
 
 resource "aws_subnet" "example2" {
   vpc_id            = aws_vpc.example.id
-  cidr_blocks       = ["10.0,0.0/16"]
+  cidr_block = "10.0.2.0/24"
   availability_zone = "us-west-2b"
 }
 
@@ -95,7 +72,5 @@ resource "aws_vpc" "example" {
   tags = {
     Name = "example"
   }
-
-
   cidr_block = "10.0.0.0/16"
 }
