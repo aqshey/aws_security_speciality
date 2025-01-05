@@ -1,0 +1,28 @@
+Web Application Firewall:
+1. A Web Application Firewall (WAF) is a security service that protects web applications from common web-based attacks.
+2. It filters and monitors HTTP traffic between a web application and the internet, allowing you to control which traffic is allowed or blocked.
+3. WAF can be used to protect web applications from a variety of attacks, such as SQL injection, cross-site scripting, and DDoS attacks.
+4. WAF can be deployed in front of web applications hosted on Amazon CloudFront, Application Load Balancer, or API Gateway.
+5. WAF rules can be created to block or allow traffic based on IP addresses, HTTP headers, URI strings, or request methods.
+6. WAF provides real-time visibility into web traffic and security events, allowing you to monitor and respond to potential threats.
+
+
+Managed Rules:
+Most used rule groups:
+1. AWSManagedRulesCommonRuleSet: Provides protection against common web-based attacks, such as SQL
+    injection and cross-site scripting.
+2. AWSManagedRulesKnownBadInputsRuleSet: Provides protection against known bad inputs, such as malicious
+    IP addresses and user agents.
+3. AWSManagedRulesPHPRuleSet: Provides protection against common PHP vulnerabilities, such as remote code
+    execution and file inclusion.
+4. AWSManagedRulesLinuxRuleSet: Provides protection against common Linux vulnerabilities, such as shell
+    command injection and directory traversal.
+5. AWSManagedRulesSQLInjectionRuleSet: Provides protection against SQL injection attacks, such as SQL
+    injection and SQL injection bypass.
+6. AWSManagedRulesWordPressRuleSet: Provides protection against common WordPress vulnerabilities, such as
+    remote code execution and file inclusion.
+7. AWSManagedRulesPythonRuleSet: Provides protection against common Python vulnerabilities, such as remote
+    code execution and file inclusion.
+
+
+These are some command rule set. you can also create your custom rule set to finegrain control over your applications.

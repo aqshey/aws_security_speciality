@@ -16,3 +16,28 @@ Cloudfront Signed URL / signed cookies:
 
 You want to distribute paid shared content to your users. You want to ensure that only users who have paid for the content can access it.
 You can use CloudFront signed URLs or signed cookies to control access to the content. You can generate signed URLs or signed cookies for each user who has paid for the content, and only users with valid signed URLs or signed cookies will be able to access the content.
+
+
+Field level encryption:
+1. Field-level encryption is a feature of CloudFront that allows you to encrypt sensitive data in your web application before it is sent to CloudFront.
+2. It provides an additional layer of security by encrypting data at the field level, ensuring that sensitive information is protected from unauthorized access.
+3. sensetive information encrypted at the edge close to user
+
+usage:
+1. Field-level encryption can be used to encrypt sensitive data, such as credit card numbers, social security numbers, and personal information, before it is sent to CloudFront.
+
+How to configure:
+1. To configure field-level encryption, you need to create a field-level encryption profile in the AWS Management
+   Console.
+2. You can specify the fields that you want to encrypt and the encryption keys that you want to use.
+3. You can then associate the field-level encryption profile with a CloudFront distribution to enable field-level
+   encryption for the distribution.
+4. When a user submits a form on your website, the sensitive data is encrypted at the edge by CloudFront before it is
+    sent to the origin server.
+5. The origin server can decrypt the data using the encryption keys specified in the field-level encryption profile.
+
+
+
+origin access control:
+1. Origin access identity is a feature of CloudFront that allows you to restrict access to your origin server.
+2. It provides an additional layer of security by allowing you to control which users can access your origin server.
