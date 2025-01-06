@@ -1,0 +1,67 @@
+AWS KMS:
+KMS is key management service that allows you to create and manage encryption keys for your AWS resources.
+- KMS is integrated with other AWS services, such as S3, EBS, RDS, and Redshift, to provide encryption and decryption capabilities for your data.
+- KMS provides secure key storage and management, as well as hardware-based encryption and decryption capabilities.
+- KMS is a fully managed service that handles the deployment, management, and maintenance of the encryption keys, allowing you to focus on building secure applications.
+- KMS is compliant with industry standards, such as FIPS 140-2 Level 2, and provides secure key storage and encryption capabilities for your data.
+- KMS is a cost-effective solution for protecting sensitive data and meeting compliance requirements, such as PCI DSS, HIPAA, and GDPR.
+
+how to create a key in KMS:
+- To create a key in KMS, you can use the AWS Management Console, AWS CLI, or AWS SDKs.
+- You can specify the key alias, description, and key policy when creating a key in KMS.
+- You can also enable key rotation and define key usage permissions when creating a key in KMS.
+- Once the key is created, you can use it to encrypt and decrypt data in other AWS services, such as S3, EBS, RDS, and Redshift.
+- You can also use the key to encrypt and decrypt data in your own applications using the KMS APIs and SDKs.
+
+
+Multi region key:
+- KMS supports multi-region keys that allow you to create and manage encryption keys in multiple regions.
+- Multi-region keys are replicated across multiple regions to provide high availability and durability for your encryption keys.
+- You can use multi-region keys to encrypt and decrypt data in multiple regions without having to create separate keys in each region.
+- Multi-region keys are managed centrally in the primary region and are replicated to the secondary regions for encryption and decryption operations.
+
+
+create customer managed key:
+- To create a customer managed key in KMS, you can use the AWS Management Console, AWS CLI, or AWS SDKs.
+- You can specify the key alias, description, key policy, and key usage permissions when creating a customer managed key in KMS.
+- You can also enable key rotation and define key administrators and key users for the key.
+- Once the customer managed key is created, you can use it to encrypt and decrypt data in other AWS services and applications.
+- You can also define key policies to control access to the key and audit key usage using AWS CloudTrail.
+
+terraform to create customer managed key:
+
+resource "aws_kms_key" "example" {
+  description             = "Example customer managed key"
+  deletion_window_in_days = 10
+  policy                  = data.aws_iam_policy_document.example.json
+}
+ // sample policy
+
+data "aws_iam_policy_document" "example" {
+  statement {
+    sid       = "Enable IAM User Permissions"
+    effect    = "Allow"
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::123456789012:root"]
+    }
+    actions   = ["kms:*"]
+    resources = ["*"]
+  }
+}
+
+// To use the key in other resources, you can reference the key ARN in the resource configuration:
+
+resource "aws_s3_bucket" "example" {
+  bucket = "example"
+  acl    = "private"
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        kms_master_key_id = aws_kms_key.example.arn
+        sse_algorithm     = "aws:kms"
+      }
+    }
+  }
+}
