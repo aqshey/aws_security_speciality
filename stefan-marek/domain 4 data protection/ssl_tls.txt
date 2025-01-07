@@ -1,0 +1,26 @@
+SSL TLS:
+
+1. SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols that provide
+   secure communications over a computer network. SSL was originally developed by Netscape and released in 1995.
+   TLS is the successor to SSL and the terms SSL and TLS are often used interchangeably.
+
+configuring SSL/TLS for ELB:
+
+- ELB supports SSL/TLS termination, which allows you to offload the SSL/TLS encryption and decryption
+  process from your application servers to the load balancer.
+
+public ssl certificate are issued by
+1. Certificate Authority (CA)
+2. Self-signed certificate
+
+CA examples:
+    1. Let's Encrypt
+    2. DigiCert
+    3. Comodo
+    4. GlobalSign
+    5. GoDaddy
+    6. Symantec
+    7. Thawte
+    8. VeriSign
+
+
