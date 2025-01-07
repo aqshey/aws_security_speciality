@@ -1,0 +1,38 @@
+NLB:
+Key points in shorts and sweet:
+1. Network Load Balancer (NLB) is a Layer 4 (TCP, UDP) load balancer that distributes incoming traffic
+   across multiple targets, such as Amazon EC2 instances, in multiple Availability Zones.
+2. NLB is designed to handle high volumes of traffic and provides low latency and high throughput.
+3. NLB supports static IP addresses, which can be used to route traffic to specific targets or to maintain
+   session persistence for clients.
+4. NLB can be used to load balance TCP and UDP traffic, such as HTTP, HTTPS, TCP, and UDP, across multiple
+
+
+Client IP preservation:
+1. NLB supports preserving the client IP address in the X-Forwarded-For (XFF) header for TCP traffic.
+2. This allows the target to see the original client IP address and make decisions based on the client's location
+   or identity.
+
+default settings:
+1. NLB uses a flow hash algorithm to distribute traffic across targets in a target group.
+2. NLB supports health checks to monitor the health of targets and route traffic only to healthy targets.
+3. NLB can be used with AWS Auto Scaling to automatically adjust the number of targets based on traffic
+   patterns and demand.
+
+Cross-zone load balancing:
+1. NLB supports cross-zone load balancing, which allows traffic to be distributed evenly across all targets in
+   all Availability Zones.
+2. This helps to ensure that traffic is evenly distributed and that targets are used efficiently.
+
+Connection draining:
+1. NLB supports connection draining, which allows in-flight requests to complete before a target is
+   deregistered.
+2. This helps to ensure that clients do not experience interruptions in service when a target is removed from
+    the load balancer.
+
+Monitoring and logging:
+1. NLB provides access logs that capture detailed information about requests and responses processed by the
+   load balancer.
+2. NLB can be integrated with Amazon CloudWatch to monitor the performance and health of the load balancer
+    and targets.
+
