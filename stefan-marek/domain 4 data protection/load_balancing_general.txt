@@ -1,0 +1,24 @@
+ELB sticky session:
+- ELB supports sticky sessions, which bind a user's session to a specific instance. This is useful for
+  applications that require a user to stick to the same instance for the duration of their session.
+- Sticky sessions are enabled by creating a cookie that contains the session ID. The cookie is then
+  inserted into the response from the load balancer to the client.
+- When the client sends a request to the load balancer, the load balancer uses the cookie to route the
+  request to the correct instance.
+
+
+cookies names:
+ reserved by aws:
+    1. AWSELB
+    2. AWSELBCORS
+    3. AWSELBAuthSessionCookie
+
+custom cookie:
+    1. Custom cookie name
+    2. Custom cookie expiration period
+    3. Custom cookie path
+    4. Custom cookie domain
+    5. Custom cookie secure
+    6. Custom cookie HTTPOnly
+    7. Custom cookie same site
+
