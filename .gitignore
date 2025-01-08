@@ -164,3 +164,7 @@ nbdist/
 *.old
 *.backup
 *.orig
+
+**/.terraform/*
+**/terraform.hcl
+
