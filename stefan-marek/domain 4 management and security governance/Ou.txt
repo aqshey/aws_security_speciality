@@ -1,0 +1,31 @@
+Organizational units
+    1. Organizational units (OUs) are a way to organize your AWS accounts into a hierarchy.
+    2. OUs can contain other OUs and accounts.
+
+important points for ou as per exam perspective:
+    1. OUs can contain other OUs and accounts.
+    2. OUs can be used to apply policies to multiple accounts.
+    3. OUs can be used to group accounts for billing purposes.
+    4. OUs can be used to apply service control policies (SCPs) to multiple accounts.
+    5. OUs can be used to apply tag policies to multiple accounts.
+    6. OUs can be used to apply IAM policies to multiple accounts.
+
+
+    security:
+        1. OUs can be used to apply service control policies (SCPs) to multiple accounts.
+        2. OUs can be used to apply IAM policies to multiple accounts.
+        3. OUs can be used to apply tag policies to multiple accounts.
+
+
+example of multi layer scp:
+
+management scp:
+    1. deny all actions on all resources
+    2. allow only iam actions on all resources
+
+security scp:
+    1. deny all actions on all resources
+    2. allow only ec2 actions on all resources
+
+    1. deny all actions on all resources
+    2. allow only s3 actions on all resources

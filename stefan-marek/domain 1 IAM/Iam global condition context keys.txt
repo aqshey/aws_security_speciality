@@ -1,0 +1,6 @@
+IAM conditions:
+1. aws:RequestTag/${TagKey}
+2. aws:TagKeys
+
+
+
