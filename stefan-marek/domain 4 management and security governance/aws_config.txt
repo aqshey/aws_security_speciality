@@ -1,0 +1,36 @@
+aws config:
+
+what is it?
+- aws config is a service that enables you to assess, audit, and evaluate the configurations of your aws resources.
+- it continuously monitors and records your aws resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.
+- it simplifies compliance auditing, security analysis, change management, and operational troubleshooting.
+
+config rules:
+- config rules are the building blocks of aws config.
+- they represent your desired configuration settings for specific aws resources or
+  for the entire aws account.
+- config rules can be used to evaluate the configuration settings of aws resources.
+- they can be used to monitor and enforce compliance with desired configurations.
+- config rules can be used to trigger evaluations when a resource is created, modified, or deleted.
+- config rules can be used to trigger evaluations at regular intervals.
+- config rules can be used to trigger evaluations in response to configuration changes.
+- config rules can be used to trigger evaluations in response to configuration snapshots.
+
+
+config rule types:
+    1. aws managed
+    2. custom
+    3. third-party
+
+    aws managed:
+        - aws managed config rules are predefined rules that are provided by aws.
+        - they are ready to use and require no additional configuration.
+        - they are designed to help you evaluate your aws resource configurations against best practices.
+        - they are designed to help you evaluate your aws resource configurations against industry standards.
+        - they are designed to help you evaluate your aws resource configurations against regulatory requirements.
+
+    custom:
+        - custom config rules are custom rules that you create.
+        - they are designed to help you evaluate your aws resource configurations against your own requirements.
+        - they are designed to help you evaluate your aws resource configurations against your own policies.
+        - they are designed to help you evaluate your aws resource configurations against your own standards.
