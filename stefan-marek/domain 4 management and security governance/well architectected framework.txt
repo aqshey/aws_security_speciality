@@ -15,6 +15,6 @@ well architected framework:
         - cost optimization: focus on avoiding unnecessary costs.
         - sustainability: focus on the environmental impact of your workloads.
 
-        if you focus on operational excellancy then automatically it will result in cost optimization. as
+        if you focus on operational excellency then automatically it will result in cost optimization. as
         your architecture will become more efficient and consumes less cost.
 
