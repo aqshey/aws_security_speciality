@@ -29,10 +29,57 @@ resource "aws_cloudformation_stack" "stack" {
           }
         }
       }
-    }
-  }
-}
+    },
+    "MySecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Allow HTTP traffic",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 80,
+            "ToPort": 80,
+            "CidrIp": "10.0.0.1/32"
 
+            }
+            ]
+        }
+    },
+
+    "MyLoadBalancer": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "Subnets": ["subnet-12345678", "subnet-87654321"],
+        "SecurityGroups": ["sg-12345678"],
+        "Type": "application"
+      }
+    },
+
+    "MyListener": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "Type": "forward",
+            "TargetGroupArn": { "Ref": "MyTargetGroup" }
+          }
+        ],
+        "LoadBalancerArn": { "Ref": "MyLoadBalancer" },
+        "Port": 80,
+        "Protocol": "HTTP"
+      }
+    },
+
+    "MyTargetGroup": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "instance",
+        "VpcId": "vpc-12345678"
+      }
+    }
+    }
+    }
 EOF
 }
-
