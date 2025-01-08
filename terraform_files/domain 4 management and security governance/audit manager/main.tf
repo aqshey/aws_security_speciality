@@ -5,8 +5,7 @@ provider "aws" {
 
 resource "aws_auditmanager_assessment" "assessment" {
   name                    = "my-assessment"
-  assessment_framework_id = aws_auditmanager_framework.framework.id
-  framework_id            = ""
+  framework_id            = data.aws_auditmanager_framework.framework.id
   roles {}
 }
 
