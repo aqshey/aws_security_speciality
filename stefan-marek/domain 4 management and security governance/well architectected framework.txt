@@ -1,0 +1,20 @@
+well architected framework:
+    6 pillars
+        1. operational excellence
+        2. security
+        3. reliability
+        4. performance efficiency
+        5. cost optimization
+        6. sustainability
+
+        They are not something to balance. or tradeoffs. they are synergy
+        - operational excellence: focus on running and monitoring systems to deliver business value and continually improving processes and procedures.
+        - security: focus on protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
+        - reliability: focus on ensuring a workload performs its intended function correctly and consistently when it's expected to.
+        - performance efficiency: focus on using IT and computing resources efficiently.
+        - cost optimization: focus on avoiding unnecessary costs.
+        - sustainability: focus on the environmental impact of your workloads.
+
+        if you focus on operational excellancy then automatically it will result in cost optimization. as
+        your architecture will become more efficient and consumes less cost.
+
