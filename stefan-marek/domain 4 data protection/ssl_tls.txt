@@ -24,3 +24,19 @@ CA examples:
     8. VeriSign
 
 
+HTTPS listener:
+    security policy:
+        a combination of ssl protocols and ciphers that are used to secure connections between clients and the
+        load balancer.
+        - ELB provides predefined security policies that adhere to industry best practices.
+
+    For ALB NLB:
+        frontend connection:
+            - The frontend connection is the connection between the client and the load balancer.
+            - The security policy determines the protocols and ciphers that the client and load balancer use to
+              communicate.
+        backend connection:
+            - The backend connection is the connection between the load balancer and the target.
+            - The security policy determines the protocols and ciphers that the load balancer and target use to
+              communicate.
+
