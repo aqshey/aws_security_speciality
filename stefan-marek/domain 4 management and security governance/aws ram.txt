@@ -1,0 +1,13 @@
+RAM:
+
+    share aws resource that you own with other aws accounts.
+    share with any account or within your organization
+    avoid resource duplication
+    vpc subnets
+        1. allow to have all the resources launched in the same subnets
+        2. must be from the same aws organization
+        3. you can share resources with any aws account or within your organization
+        4. you can not share default vpc, security groups
+        5. participants can manage their own resources in there.
+
+    ram resources:
