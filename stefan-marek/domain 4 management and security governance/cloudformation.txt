@@ -1,0 +1,89 @@
+Cloudformation:
+    1. Infrastructure as code (IAC) service
+    2. It allows you to define your AWS resources as code
+    3. It allows you to create, update, and delete your AWS resources by using templates
+
+creating a stack:
+    1. create a template
+    2. create a stack
+    3. cloudformation provisions the stack
+
+cloudformation stack policies:
+    1. stack policies are JSON documents that define the update actions that can be performed on designated resources
+    2. stack policies are attached to stacks
+    3. stack policies are used to prevent accidental updates to stack resources
+    4. stack policies are used to prevent updates to specific properties of stack resources
+    5. when you set a stack policy, all update actions are denied by default
+example of stack policies:
+    1. allow all updates
+    2. allow updates to specific properties
+    3. allow updates to specific properties only when other properties are updated
+    4. allow updates to specific properties only when other properties are not updated
+    5. deny all updates
+
+json
+{
+    "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : "Update:*",
+            "Principal" : "*",
+            "Resource" : "*"
+        }
+    ]
+}
+
+{
+    "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : "Update:Modify",
+            "Principal" : "*",
+            "Resource" : "*"
+        }
+    ]
+}
+
+{
+    "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : "Update:Modify",
+            "Principal" : "*",
+            "Resource" : "*",
+            "Condition" : {
+                "StringEquals" : {
+                    "ResourceTag/Environment" : "Production"
+                }
+            }
+        }
+    ]
+}
+
+{
+    "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : "Update:Modify",
+            "Principal" : "*",
+            "Resource" : "*",
+            "Condition" : {
+                "StringNotEquals" : {
+                    "ResourceTag/Environment" : "Production"
+                }
+            }
+        }
+    ]
+}
+
+{
+    "Statement" : [
+        {
+            "Effect" : "Deny",
+            "Action" : "Update:*",
+            "Principal" : "*",
+            "Resource" : "*"
+        }
+    ]
+}
+
