@@ -1,6 +1,29 @@
-IAM conditions:
-1. aws:RequestTag/${TagKey}
-2. aws:TagKeys
+Global condition and Context Keys:
+1. when using global aws service, IAM, cloudfront, route53, support the aws region
+   is always us-east-1
 
+work arround using NotAction and Deny
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "NotAction": [
+                "iam:*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        }
+    ]
+}
 
-
+Top 10 most important IAM conditions keys:
+    1. aws:RequestedRegion
+    2. aws:principlearn
+    3. aws:SourceArn
+    4. aws:SourceIp
+    5. aws:CalledVia

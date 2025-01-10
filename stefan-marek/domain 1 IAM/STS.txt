@@ -1,0 +1,31 @@
+STS:
+1. Allows to grant limited and temporary access to aws resources
+2. AssumeRole, AssumeRoleWithSAML, AssumeRoleWithWebIdentity, GetFederationToken, GetSessionToken
+
+    in details:
+
+    1. AssumeRole: allows to assume a role in another account
+    2. AssumeRoleWithSAML: allows to authenticate using SAML
+    3. AssumeRoleWithWebIdentity: allows to authenticate using web identity
+    4. GetFederationToken: allows to get a token from a federated user
+    5. GetSessionToken: allows to get a session token
+
+in order to get temporary tokens followings steps are required:
+
+    1. create a policy that allows to assume a role
+    2. create a role that can be assumed
+    3. create a user that can assume the role
+    4. create a trust relationship between the role and the user
+    5. create a session token
+
+Policy:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::account-id:role/role-name"
+        }
+    ]
+}
