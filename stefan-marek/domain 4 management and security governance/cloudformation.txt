@@ -87,3 +87,44 @@ json
     ]
 }
 
+
+Dynamic references:
+1. you can refer the external values stored in ssm parameter store or secrets manager
+2. you can refer the values of other resources in the same stack
+3. you can refer the values of other resources in the other stacks
+
+
+example:
+
+{
+    "Resources" : {
+        "myInstance" : {
+            "Type" : "AWS::EC2::Instance",
+            "Properties" : {
+                "ImageId" : "ami-0ff8a91507f77f867",
+                "InstanceType" : "t2.micro",
+                "KeyName" : "mykey",
+                "SecurityGroups" : [ { "Ref" : "mySecurityGroup" } ],
+                "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+                    "#!/bin/bash -xe\n",
+                    "yum install -y aws-cfn-bootstrap\n",
+                    "/opt/aws/bin/cfn-signal -e $? --stack ", { "Ref" : "AWS::StackName" }, " --resource myInstance\n"
+                ]]}}
+            }
+        },
+        "mySecurityGroup" : {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "Enable SSH access via port 22",
+                "SecurityGroupIngress" : [ {
+                    "IpProtocol" : "tcp",
+                    "FromPort" : "22",
+                    "ToPort" : "22",
+                    "CidrIp" : { "Ref" : "VpcCidrBlock" }
+                } ]
+            }
+        }
+    }
+}
+
+
