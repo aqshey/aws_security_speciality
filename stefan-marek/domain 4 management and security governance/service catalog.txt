@@ -1,0 +1,15 @@
+AWS service catalog:
+    1. it allows organizations to create and manage catalogs of IT services that are approved for use on aws.
+    2. it allows organizations to centrally manage commonly deployed IT services.
+    3. it allows organizations to achieve consistent governance and meet compliance requirements while enabling users to quickly deploy only the approved IT services they need.
+    4. it allows organizations to create portfolios of products that are pre-approved for use on aws.
+
+  users that are new to aws have too many options and may create stacks that are not compliant with the organization's policies. service catalog allows organizations to create a portfolio of products that are pre-approved for use on aws. this allows users to quickly deploy only the approved products they need. this reduces the risk of deploying stacks that are not compliant with the organization's policies.
+  some users just want a quick self service portal to launch the set of authorized products predefinedd by admins
+
+    service catalog allows you to
+        1. create a portfolio of products
+        2. create a portfolio of portfolios
+        3. create a portfolio of products that are pre-approved for use on aws
+        4. create a portfolio of portfolios that are pre-approved for use on aws
+        5. create a portfolio of products that are pre-approved for use on aws and are grouped by categories
