@@ -29,3 +29,36 @@ Policy:
         }
     ]
 }
+
+STS version vs version 2:
+    error: an error occurred when calling the describeinstacnes operation:
+    aws was not able to validate the provided access credentials.
+
+    To solve two options:
+    1. use the regional STS endpoit which will return STS tokens version 2. user the closest regional
+       endpoiint for lowest latency
+    2. use the global STS endpoint which will return STS tokens version 1. use the global endpoint
+         for highest availability
+
+
+Granting the access to 3rd party using external id:
+1.  external id is the piece of the data that can be passed to assumerole api call
+2.  external id is used to prevent the confused deputy problem
+3.  confused deputy problem is when a trusted entity is tricked into using its permissions to perform an action that benefits an attacker
+
+json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::account-id:role/role-name",
+            "Condition": {
+                "StringEquals": {
+                    "sts:ExternalId": "external-id"
+                }
+            }
+        }
+    ]
+}

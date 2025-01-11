@@ -1,0 +1,27 @@
+Direct connect:
+1. it allows you to establish a dedicated network connection from your premises to aws.
+2. it allows you to establish a private network connection between aws and your datacenter,
+   office, or colocation environment.
+3. access public rsources s3 and private resources on same connection.
+
+user cases:
+1. you have a datacenter and you want to connect to aws
+2. you have an office and you want to connect to aws
+3. you have a colocation environment and you want to connect to aws
+
+
+steps:
+1. create a virtual interface
+2. create a connection
+3. create a direct connect gateway
+4. associate the virtual interface with the direct connect gateway
+5. associate the virtual interface with the connection
+
+
+connection types:
+    1. dedicated connection
+    2. hosted connection
+
+direct connect locations:
+    1. direct connect locations are hubs that are used to connect to aws
+    2. direct connect locations are used to connect to aws regions
